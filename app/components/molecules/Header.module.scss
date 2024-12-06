@@ -1,0 +1,40 @@
+.header {
+  height: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 25px;
+
+  ._{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1240px;
+
+    .logo{
+      width: 216px;
+      height: 68px;
+    }
+
+    nav{
+      display: flex;
+      align-items: center;
+      justify-content: end;
+
+      width: 100%;
+      max-width: 400px;
+      a{
+        font-size: 24px;
+        font-weight: 500;
+        color: #333;
+        text-decoration: none;
+        margin-left: 20px;
+        &.active{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

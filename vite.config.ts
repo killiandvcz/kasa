@@ -11,4 +11,10 @@ export default defineConfig({
     },
   },
   plugins: [reactRouter(), tsconfigPaths()],
+  resolve: {
+    alias: {
+      $components: '/app/components',
+
+    }
+  }
 });

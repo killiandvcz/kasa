@@ -1,13 +1,28 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import Header from "~/components/molecules/Header";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Home" },
+    { name: "description", content: "Welcome to Kasa" },
   ];
 }
 
 export default function Home() {
-  return <Welcome />;
+  return (
+      <>
+
+      </>
+  )
+}
+
+
+export function ErrorBoundary({error}) {
+    return (
+        <div>
+            <h1>Oops!</h1>
+            <p>An unexpected error occurred.</p>
+            {error && <pre>{error.message}</pre>}
+        </div>
+    )
 }

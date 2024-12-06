@@ -2,11 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  /*@apply bg-white dark:bg-gray-950;*/
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+  /*@media (prefers-color-scheme: dark) {*/
+  /*  color-scheme: dark;*/
+  /*}*/
+}
+
+*{
+    font-family: 'Montserrat', sans-serif;
+  color: black
 }
