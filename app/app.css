@@ -6,14 +6,22 @@
 
 html,
 body {
-  /*@apply bg-white dark:bg-gray-950;*/
+    /*@apply bg-white dark:bg-gray-950;*/
 
-  /*@media (prefers-color-scheme: dark) {*/
-  /*  color-scheme: dark;*/
-  /*}*/
+    /*@media (prefers-color-scheme: dark) {*/
+    /*  color-scheme: dark;*/
+    /*}*/
 }
 
 *{
     font-family: 'Montserrat', sans-serif;
-  color: black
+    color: black;
+    box-sizing: border-box;
+}
+
+main{
+    max-width: 1240px;
+    margin: 0 auto;
+    box-sizing: content-box;
+    padding: 25px;
 }
