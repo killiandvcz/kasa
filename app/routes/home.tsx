@@ -3,6 +3,7 @@ import Hero from "~/assets/hero.jpg";
 import styles from "./Home.module.scss";
 import {db} from "~/data/data.js";
 import { useState, useEffect } from 'react';
+import {Link} from "react-router";
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -44,7 +45,8 @@ export default function Home() {
             </div>
             <div className={styles.gallery}>
                 {logements.map((logement) => (
-                    <div
+                    <Link
+                        to={`/logement/${logement.id}`}
                         key={logement.id}
                         className={styles.gallery__item}
                         style={{backgroundImage: `url(${logement.cover})`}}
@@ -52,7 +54,7 @@ export default function Home() {
                         <div className={styles.gallery__content}>
                             <h2>{logement.title}</h2>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </>
