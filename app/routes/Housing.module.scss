@@ -1,0 +1,29 @@
+.housing{
+    display: flex;
+    flex-direction: column;
+    h1{
+        margin-top: 25px;
+        color: #FF6060;
+        font-weight: 500;
+        font-size: 36px;
+    }
+    .tags{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        span{
+            background-color: #FF6060;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+    }
+    .content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+}

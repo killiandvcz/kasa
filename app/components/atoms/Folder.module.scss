@@ -1,0 +1,60 @@
+/* Folder.module.scss */
+.folder {
+  border-radius: 5px;
+  overflow: hidden;
+  .title {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FF6060;
+    padding: 10px 20px 10px 15px;
+    p{
+      color: white;
+      font-weight: 700;
+      font-size: 24px;
+    }
+  }
+
+  .chevron {
+    display: inline-flex;
+    transition: transform 0.3s ease;
+    
+
+    &.open {
+      transform: rotate(180deg);
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      color: white;
+      stroke: white;
+    }
+  }
+
+  .fold {
+
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 0fr;
+    z-index: 2;
+    transition: grid-template-rows 0.3s ease;
+
+    ._content {
+      overflow: hidden;
+      grid-row: 1 / span 2;
+    }
+
+    &.active {
+      grid-template-rows: 1fr;
+    }
+  }
+}
+
+.content{
+  padding: 10px 20px 10px 15px;
+
+  background: #F6F6F6;
+
+}
