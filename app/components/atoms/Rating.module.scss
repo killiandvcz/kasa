@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    gap: 5px;
+}
+
+.star {
+    width: 25px;
+    height: 24px;
+    
+    path {
+        transition: fill 0.3s ease;
+    }
+    
+    &.active path {
+        fill: #FF6060;
+    }
+    
+    &.inactive path {
+        fill: #E3E3E3;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .star {
+        width: 18px;
+        height: 18px;
+    }
+    
+}

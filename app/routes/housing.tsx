@@ -5,6 +5,7 @@ import {db} from "~/data/data.js";
 import ImageCarousel from "~/components/atoms/Slider";
 import styles from "./Housing.module.scss";
 import Folder from "~/components/atoms/Folder";
+import Rating from "~/components/atoms/Rating";
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -37,14 +38,26 @@ export default function Housing() {
             {logement.pictures && <ImageCarousel images={logement.pictures} />}
             
             <div className={styles.head}>
-                <h1>{logement.title}</h1>
-                <span className="location">{logement.location}</span>
-                <div className={styles.tags}>
-                    {logement.tags && logement.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                <div className={styles.info}>
+                    <h1>{logement.title}</h1>
+                    <span className="location">{logement.location}</span>
+                    <div className={styles.tags}>
+                        {logement.tags && logement.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                    </div>
+                </div>
+                <div className={styles.owner}>
+                    <div className={styles.host}>
+                        <span className={styles.name}>{logement.host?.name}</span>
+                        <div className="avatar">
+                            <img src={logement.host?.picture} alt={logement.host?.name} />
+                        </div>
+                    </div>
+                    <div className="rating">
+                        <Rating rating={logement.rating} />
+                    </div>
                 </div>
             </div>
             <div className={styles.content}>
-            
                 <Folder 
                     title={"Description"}
                     content={logement.description}

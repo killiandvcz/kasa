@@ -38,3 +38,19 @@
     }
   }
 }
+
+@media screen and (max-width: 768px){
+  .header{
+    ._{
+      
+      nav{
+        margin-top: 20px;
+        a{
+          font-size: 14px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  
+}

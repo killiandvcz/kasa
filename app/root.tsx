@@ -49,36 +49,48 @@ export default function App() {
   return <Outlet />;
 }
 
-export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-  let message = "Oops!";
-  let details = "An unexpected error occurred.";
-  let stack: string | undefined;
+// export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 
+
+//   return (
+//       <>
+//         <Header/>
+//         <main className={errorStyles.error}>
+//           <h1>4044</h1>
+//           <p>Oups! La page que vous demandez n'existe pas.</p>
+//           <Link
+//               to="/"
+//           >
+//             <span className="goBack">Retourner sur la page d'accueil</span>
+//           </Link>
+//         </main>
+//         <Footer />
+//       </>
+//   );
+// }
+
+export function ErrorBoundary({
+  error,
+}: Route.ErrorBoundaryProps) {
   if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? "404" : "Error";
-    details =
-      error.status === 404
-        ? "Oups! La page que vous demandez n'existe pas."
-        : error.statusText || details;
-  } else if (import.meta.env.DEV && error && error instanceof Error) {
-    details = error.message;
-    stack = error.stack;
-  }
-
-  return (
+    return (
       <>
-        <Header/>
-        <main className={errorStyles.error}>
-          <h1>{message}</h1>
-          <p>{details}</p>
-          <Link
-              to="/"
-          >
-            <span className="goBack">Retourner sur la page d'accueil</span>
-          </Link>
-        </main>
-        <Footer />
+        <h1>
+          {error.status} {error.statusText}
+        </h1>
+        <p>{error.data}</p>
       </>
-
-  );
+    );
+  } else if (error instanceof Error) {
+    return (
+      <div>
+        <h1>Error</h1>
+        <p>{error.message}</p>
+        <p>The stack trace is:</p>
+        <pre>{error.stack}</pre>
+      </div>
+    );
+  } else {
+    return <h1>Unknown Error</h1>;
+  }
 }
