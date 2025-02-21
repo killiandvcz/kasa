@@ -17,7 +17,7 @@ export function meta({}: Route.MetaArgs) {
 export default function Housing() {
     let {id} = useParams();
 
-    const [logement, setLogement] = useState([]);
+    const [logement, setLogement] = useState(null);
 
     useEffect(() => {
         const fetchLogement = async () => {
@@ -35,7 +35,7 @@ export default function Housing() {
     })
 
 
-    return (
+    return logement ? (
         <div className={styles.housing}>
             {logement.pictures && <ImageCarousel images={logement.pictures} />}
             
@@ -72,5 +72,7 @@ export default function Housing() {
             </div>
 
         </div>
-    );
+    ) : (
+        <div>Chargement...</div>
+    )
 }
