@@ -1,6 +1,9 @@
 .folder {
   border-radius: 5px;
   overflow: hidden;
+  width: 100%;
+  flex: 1;
+  min-width: 250px;
   .title {
     cursor: pointer;
     display: flex;
@@ -55,6 +58,7 @@
   padding: 10px 20px 10px 15px;
 
   background: #F6F6F6;
+  font-style: 'Roboto', sans-serif;
 
 }
 

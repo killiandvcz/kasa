@@ -25,7 +25,9 @@ export default function Housing() {
                 const data = await db.findById(id);
                 setLogement(data);
             } catch (err) {
-                console.error(err);
+                // redirect to "logement-non-trouve"
+
+                window.location.href = "/logement-non-trouve";
             }
         };
 

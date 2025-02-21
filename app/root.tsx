@@ -49,26 +49,6 @@ export default function App() {
   return <Outlet />;
 }
 
-// export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-
-
-//   return (
-//       <>
-//         <Header/>
-//         <main className={errorStyles.error}>
-//           <h1>4044</h1>
-//           <p>Oups! La page que vous demandez n'existe pas.</p>
-//           <Link
-//               to="/"
-//           >
-//             <span className="goBack">Retourner sur la page d'accueil</span>
-//           </Link>
-//         </main>
-//         <Footer />
-//       </>
-//   );
-// }
-
 export function ErrorBoundary({
   error,
 }: Route.ErrorBoundaryProps) {

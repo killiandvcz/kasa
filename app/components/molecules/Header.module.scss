@@ -15,7 +15,7 @@
 
     .logo{
       width: 216px;
-      height: 68px;
+      
     }
 
     nav{
@@ -44,10 +44,26 @@
     ._{
       
       nav{
-        margin-top: 20px;
+        // margin-top: 20px;
         a{
           font-size: 14px;
           text-transform: uppercase;
+        }
+      }
+    }
+  }
+  
+}
+
+@media screen and (max-width: 480px){
+  .header{
+    ._{
+      .logo{
+        width: 100px;
+      }
+      nav{
+        a{
+          font-size: 12px;
         }
       }
     }
